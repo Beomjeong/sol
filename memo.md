@@ -41,3 +41,5 @@ https://www.sandollcloud.com/font/864/HGGGothicssi
 #F2EFE9
 #291908
 #000000
+
+4. 두번째섹션 고대어 같은거 룬문자 스타일이래. 룬문자 폰트로 검색해서 만들어서 롤링하자
