@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ▼▼ 페이지마다 수정하는 값 (여기만 수정) ▼▼ -->
+  <meta property="og:title" content="SOL: enchant 그랜드 론칭 기념 SOL깃한 플레이 이벤트">
+  <meta property="og:description" content="전지적 MMO RPG SOL: enchant 지금 크래프트박스 한정 플레이 보상을 획득하고 신권에 도전하세요!">
+  <meta property="og:url" content="https://ics.mediaweb.co.kr/_event/20260622_sol/index.html">
+  <meta property="og:image" content="assets/Thumbnail_800x400.jpg">
+  <meta name="twitter:image" content="assets/Thumbnail_1200x630.jpg">
+  <!-- og:image과 twitter:image 주소는 절대경로로 이미지 시안 확정 후 배포 전 반드시 교체해주세요. (상대경로 입력 시 공유 시 이미지가 깨지는 현상 발생) -->
+  <!-- ▲▲ 페이지마다 수정하는 값 ▲▲ -->
+
+  <!-- title / description / twitter 태그는 아래 스크립트가 og: 값을 읽어서 자동으로 채움 -->
+  <script>
+    (function () {
+      var g = function (p) { return document.querySelector('meta[property="og:' + p + '"]').content; };
+      document.title = g('title');
+      [['name', 'description', g('description')],
+      ['name', 'twitter:card', 'summary_large_image'],
+      ['name', 'twitter:title', g('title')],
+      ['name', 'twitter:description', g('description')],
+      ['name', 'twitter:url', g('url')]
+      ].forEach(function (m) {
+        var el = document.createElement('meta');
+        el.setAttribute(m[0], m[1]); el.content = m[2];
+        document.head.appendChild(el);
+      });
+    })();
+  </script>
+
+  <meta name="keywords" content="솔: 인챈트, SOL: enchant, mmorpg, 리니지같은게임, 피시방이벤트, 솔인챈트, 넷마블, 솔인챈트 이벤트, 신작 RPG, 솔인챈트 무과금, 피카플레이, 크래프트박스">
+  <meta name="author" content="Mediaweb">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SOL: enchant 그랜드 론칭 기념 플레이 이벤트">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- 카카오 JavaScript SDK (카카오톡 공유용) -->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
+</head>
