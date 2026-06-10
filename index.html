@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
 
   <!-- css -->
@@ -163,11 +163,109 @@
     <button class="mobile-fab__btn mobile-fab__btn--top" type="button" id="btnScrollTop" aria-label="맨 위로"></button>
   </div>
 
+  <!-- ════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════ -->
+  <main id="main">
+
+    <!-- Section 01 : Hero -->
+    <section class="sec sec--01" id="sec01" data-section="0">
+      <div class="sec--01__bg"></div>
+
+      <div class="sec--01__inner">
+
+        <!-- 상단 로고 -->
+        <div class="sec--01__logos">
+          <img class="sec--01__logo sec--01__logo--netmarble" src="assets/logo_netmarble.png" alt="netmarble" loading="eager">
+          <img class="sec--01__logo sec--01__logo--craftbox" src="assets/logo_craftbox.png" alt="CRAFTBOX" loading="eager">
+        </div>
+
+        <!-- 우측 패널 -->
+        <div class="hero-panel">
+          <div class="hero-panel__content">
+
+            <!-- 브랜드 타이틀 이미지 -->
+            <div class="hero-title-area">
+              <img class="hero-bi-title" src="assets/title_bi.png" alt="전지적 MMORPG SOL: enchant">
+            </div>
+
+            <!-- 텍스트 + 정보 박스 + CTA -->
+            <div class="hero-body">
+
+              <div class="hero-text">
+                <div class="hero-text__titles">
+                  <p class="hero-text__sub type-deco">그랜드 오픈 기념</p>
+                  <div class="hero-text__main">
+                    <p class="hero-text__h1">신권 도전!</p>
+                    <p class="hero-text__h2">SOL깃한 플레이 이벤트</p>
+                  </div>
+                </div>
+                <p class="hero-text__desc type-desc-title">지금 <span class="hero-text__accent">크래프트박스 한정</span> 플레이 보상을 획득하고<br>신권에 도전하세요!</p>
+              </div>
+
+              <div class="hero-info">
+                <div class="hero-info__item">
+                  <img class="hero-info__bg hero-info__bg--default" src="assets/bt_long.png" alt="">
+                  <img class="hero-info__bg hero-info__bg--hover" src="assets/bt_long_hover.png" alt="">
+                  <span class="hero-info__text type-desc-title">이벤트 기간 : 2026. 06. 22(월) ~ 2026. 07. 22(수)</span>
+                </div>
+                <div class="hero-info__item">
+                  <img class="hero-info__bg hero-info__bg--default" src="assets/bt_long.png" alt="">
+                  <img class="hero-info__bg hero-info__bg--hover" src="assets/bt_long_hover.png" alt="">
+                  <span class="hero-info__text type-desc-title">참여대상 : 피카플레이 회원</span>
+                </div>
+              </div>
+
+              <a class="hero-cta" href="https://sol.netmarble.com/" target="_blank" rel="noopener noreferrer">
+                <img class="hero-cta__img" src="assets/bt_playnow_default.png" alt="지금 플레이">
+                <img class="hero-cta__img hero-cta__img--hover" src="assets/bt_playnow_hover.png" alt="" aria-hidden="true">
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 02 : 이벤트 미션 -->
+    <section class="sec sec--02" id="sec02" data-section="1">
+      <div class="sec--02__bg"></div>
+      <div class="sec--02__content">
+        <!-- 01) 첫 플레이 미션 -->
+        <div class="mission-block" id="mission01"></div>
+        <!-- 02) 신권 도전 미션 -->
+        <div class="mission-block" id="mission02"></div>
+        <!-- 03) 쿠폰 등록방법 -->
+        <div class="mission-block" id="mission03"></div>
+      </div>
+    </section>
+
+    <!-- Section 03 : 이벤트 참여방법 + 마일리지 사용처 -->
+    <section class="sec sec--03" id="sec03" data-section="2">
+      <!-- 03-1 이벤트 참여방법 -->
+      <div class="sec--03__how" id="sec03-1"></div>
+      <!-- 03-2 마일리지 사용처 -->
+      <div class="sec--03__mileage" id="sec03-2"></div>
+    </section>
+
+    <!-- Section 04 : 유의사항 -->
+    <section class="sec sec--04" id="sec04" data-section="3">
+    </section>
+
+  </main>
+
+  <!-- WebGL 전환 캔버스 (전환 효과 전용 오버레이) -->
+  <canvas id="burnCanvas"></canvas>
+
   <!-- 카카오톡 공유 시 미리보기로 뜨는 이미지 1200×630 -->
   <script>var SHARE_OG_IMAGE = 'https://ics.mediaweb.co.kr/_event/20260622_sol/assets/Thumbnail_1200x630.jpg';</script>
 
   <!-- header-fab.js 연결 -->
   <script src="header-fab.js"></script>
+
+  <!-- 번 전환 엔진 -->
+  <script src="burn-transition.js"></script>
 
 </body>
 
