@@ -1,0 +1,16 @@
+{
+  "name": "endfield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node script.js",
+    "dev": "serve ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}
