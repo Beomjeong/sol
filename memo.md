@@ -21,7 +21,8 @@ DIN 2014 Demi 도 비슷함
 **스콜라 세리프**
 >>라이선스가 없어서 사용이 불가함
 https://www.sandollcloud.com/font/22364/Schola-Serif
-아쉬운대로 **빛의 계승자**라고 사용하든가
+아쉬운대로 **빛의 계승자**라도 사용하든가
+## 폰트 전달 받음.(2026/06/08)
 
 [2][Type Sub]
 **HGGGothicssi_Pro**
