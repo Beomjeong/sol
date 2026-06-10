@@ -516,6 +516,190 @@ body {
 .sec--02__content {
   position: relative;
   z-index: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 80px var(--content-pad) 120px;
+}
+
+/* ── 섹션 타이틀 ── */
+.sec02-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.sec02-header__title {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  background: linear-gradient(180deg, var(--key-awai-white) 51%, var(--key-awai-gold) 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sec02-header__desc {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.sec02-header__accent { color: var(--web-desc-accent); }
+
+/* ── 미션 박스 (공통) ── */
+.mission-box {
+  position: relative;
+  width: 100%;
+  max-width: var(--content-w);
+}
+
+/* 배경: #25201E + texture overlay */
+.mission-box__bg {
+  position: absolute;
+  inset: 0;
+  background-color: #25201E;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mission-box__texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+/*
+  나인패치 프레임 — border-image 로 구현
+  box_frame.png (1400×831px) 슬라이스:
+    top 296px  / right 216px / bottom 267px / left 365px
+  border-image-width 를 슬라이스와 동일하게 설정해 모서리 크기 1:1 렌더링
+  position: absolute 로 콘텐츠 위에 얹어 모서리가 내용 위에 표시됨
+*/
+.mission-box__frame {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  border: 1px solid transparent; /* border-image 활성화용 */
+  border-image-source: url('assets/box_frame.png');
+  border-image-slice: 296 216 267 365;
+  border-image-width: 296px 216px 267px 365px;
+  border-image-repeat: stretch;
+}
+
+/* 콘텐츠 영역 */
+.mission-box__content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 0;
+  width: 661px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+/* ── 미션 타이틀 (배지 + 텍스트) ── */
+.mission-title {
+  position: relative;
+  width: 661px;
+  max-width: 100%;
+}
+
+.mission-title__badge {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mission-title__text {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, var(--key-awai-white) 51%, var(--key-awai-gold) 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── 설명 텍스트 ── */
+.mission-desc {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  text-align: center;
+}
+
+.mission-desc__accent { color: var(--web-desc-accent); }
+
+/* ── 보상 ── */
+.mission-reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.mission-reward__img {
+  display: block;
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,0.8));
+}
+
+.mission-reward__name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mission-reward__deco {
+  display: block;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.mission-reward__text {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, var(--web-desc) 51%, #573d00 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 

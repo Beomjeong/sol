@@ -247,12 +247,52 @@
     <!-- Section 02 : 이벤트 미션 -->
     <section class="sec sec--02" id="sec02" data-section="1">
       <div class="sec--02__content">
-        <!-- 01) 첫 플레이 미션 -->
-        <div class="mission-block" id="mission01"></div>
-        <!-- 02) 신권 도전 미션 -->
-        <div class="mission-block" id="mission02"></div>
-        <!-- 03) 쿠폰 등록방법 -->
-        <div class="mission-block" id="mission03"></div>
+
+        <!-- ── 섹션 타이틀 ── -->
+        <div class="sec02-header">
+          <h2 class="sec02-header__title">이벤트 미션</h2>
+          <p class="sec02-header__desc">
+            피카PC방 또는 개인 PC 크래프트박스에서<br>
+            <span class="sec02-header__accent">SOL: enchant 플레이 시간</span>을 달성하세요!
+          </p>
+        </div>
+
+        <!-- ── 미션 01 : 첫 플레이 미션 ── -->
+        <div class="mission-box" id="mission01">
+          <!-- 배경: #25201E + texture 30% overlay -->
+          <div class="mission-box__bg" aria-hidden="true">
+            <img src="assets/texture_grey.jpg" alt="" class="mission-box__texture">
+          </div>
+          <!-- 나인패치 프레임 (콘텐츠 위에 얹음) -->
+          <div class="mission-box__frame" aria-hidden="true"></div>
+          <!-- 콘텐츠 -->
+          <div class="mission-box__content">
+            <!-- 미션 타이틀 (배지 이미지 + 텍스트 오버레이) -->
+            <div class="mission-title">
+              <img src="assets/badge.png" alt="" class="mission-title__badge">
+              <p class="mission-title__text">첫 플레이 미션</p>
+            </div>
+            <!-- 설명 -->
+            <p class="mission-desc">
+              누적 1시간 이상 플레이 달성한 계승자님께<br>
+              <span class="mission-desc__accent">선착순 마일리지 지급!</span>
+            </p>
+            <!-- 보상 -->
+            <div class="mission-reward">
+              <img src="assets/benefit_coupon1000.png" alt="1,000 미션 마일리지" class="mission-reward__img">
+              <div class="mission-reward__name">
+                <img src="assets/deco_left.png" alt="" class="mission-reward__deco" aria-hidden="true">
+                <p class="mission-reward__text">1,000 미션 마일리지</p>
+                <img src="assets/deco_right.png" alt="" class="mission-reward__deco" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 미션 02, 03 (이후 작업) ── -->
+        <div class="mission-box" id="mission02"></div>
+        <div class="mission-box" id="mission03"></div>
+
       </div>
     </section>
 
