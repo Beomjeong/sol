@@ -187,7 +187,9 @@
 
             <!-- 브랜드 타이틀 이미지 -->
             <div class="hero-title-area">
-              <img class="hero-bi-title" src="assets/title_bi.png" alt="전지적 MMORPG SOL: enchant">
+              <div class="hero-bi-wrap">
+                <img class="hero-bi-title" src="assets/title_bi.png" alt="전지적 MMORPG SOL: enchant">
+              </div>
             </div>
 
             <!-- 텍스트 + 정보 박스 + CTA -->
@@ -231,7 +233,20 @@
 
     <!-- Section 02 : 이벤트 미션 -->
     <section class="sec sec--02" id="sec02" data-section="1">
-      <div class="sec--02__bg"></div>
+      <div class="sec--02__bg">
+        <!-- 1. 배경 이미지 -->
+        <div class="sec02-bg__base"></div>
+        <!-- 2. 룬 문자 무한 롤링 (좌→우) -->
+        <div class="sec02-bg__rune">
+          <div class="sec02-bg__rune-track">
+            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip">
+            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
+            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
+          </div>
+        </div>
+        <!-- 3. 상단 고정 이미지 -->
+        <img class="sec02-bg__deco" src="assets/bgdeco_sec02.png" alt="">
+      </div>
       <div class="sec--02__content">
         <!-- 01) 첫 플레이 미션 -->
         <div class="mission-block" id="mission01"></div>

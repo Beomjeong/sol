@@ -262,9 +262,49 @@ body {
   gap: 16px;
 }
 
-.hero-bi-title {
+/* 광택 wrapper — 이미지와 동일한 크기로 마스크가 항상 정확히 일치 */
+.hero-bi-wrap {
+  position: relative;
   width: 480px;
   max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-bi-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent               30%,
+    rgba(255, 240, 160, 0.25) 42%,
+    rgba(255, 255, 255, 0.80) 50%,
+    rgba(255, 240, 160, 0.25) 58%,
+    transparent               70%
+  );
+  background-size: 300% 300%;
+  /* PNG 알파채널 마스크 — wrapper = 이미지 크기이므로 100% 100%로 항상 일치 */
+  mask-image: url('assets/title_bi.png');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: 0 0;
+  -webkit-mask-image: url('assets/title_bi.png');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0;
+  animation: titleSheen 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes titleSheen {
+  0%   { background-position: 100% 0%; }
+  22%  { background-position: 0% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+.hero-bi-title {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
@@ -418,15 +458,60 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  /* 배경 이미지는 콘텐츠 작업 시 추가 */
-  background: var(--pure-black);
   pointer-events: none;
-  opacity: 0; /* JS가 sec02 활성 시 1로 전환 */
+  opacity: 0;
   transition: opacity 0.1s;
+  overflow: hidden;
 }
 
 .sec--02.is-active .sec--02__bg {
   opacity: 1;
+}
+
+/* 1. 배경 이미지 */
+.sec02-bg__base {
+  position: absolute;
+  inset: 0;
+  background: url('assets/bg_sec02.jpg') center / cover no-repeat;
+}
+
+/* 2. 룬 문자 무한 롤링 (좌→우) */
+.sec02-bg__rune {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+}
+
+.sec02-bg__rune-track {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  animation: runeScrollLR 30s linear infinite;
+}
+
+.sec02-bg__rune-strip {
+  flex-shrink: 0;
+  height: auto;
+  display: block;
+}
+
+@keyframes runeScrollLR {
+  from { transform: translateX(-33.333%); }
+  to   { transform: translateX(0%); }
+}
+
+/* 3. 상단 고정 이미지 */
+.sec02-bg__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
 }
 
 .sec--02__content {
