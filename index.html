@@ -231,22 +231,21 @@
       </div>
     </section>
 
+    <!-- Section 02 배경 (고정) — filter 스태킹 이슈 방지를 위해 sec02 형제로 분리 -->
+    <div class="sec--02__bg" id="sec02bg">
+      <div class="sec02-bg__base"></div>
+      <div class="sec02-bg__rune">
+        <div class="sec02-bg__rune-track">
+          <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip">
+          <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
+          <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
+        </div>
+      </div>
+      <img class="sec02-bg__deco" src="assets/bgdeco_sec02.png" alt="">
+    </div>
+
     <!-- Section 02 : 이벤트 미션 -->
     <section class="sec sec--02" id="sec02" data-section="1">
-      <div class="sec--02__bg">
-        <!-- 1. 배경 이미지 -->
-        <div class="sec02-bg__base"></div>
-        <!-- 2. 룬 문자 무한 롤링 (좌→우) -->
-        <div class="sec02-bg__rune">
-          <div class="sec02-bg__rune-track">
-            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip">
-            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
-            <img src="assets/runedeco.svg" alt="" class="sec02-bg__rune-strip" aria-hidden="true">
-          </div>
-        </div>
-        <!-- 3. 상단 고정 이미지 -->
-        <img class="sec02-bg__deco" src="assets/bgdeco_sec02.png" alt="">
-      </div>
       <div class="sec--02__content">
         <!-- 01) 첫 플레이 미션 -->
         <div class="mission-block" id="mission01"></div>
@@ -271,8 +270,25 @@
 
   </main>
 
-  <!-- WebGL 전환 캔버스 (전환 효과 전용 오버레이) -->
-  <canvas id="burnCanvas"></canvas>
+  <!-- SVG 번 필터 (feTurbulence dissolve) -->
+  <svg class="burn-svg" aria-hidden="true">
+    <defs>
+      <filter id="burn-filter" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feTurbulence id="burn-turbulence"
+          type="fractalNoise"
+          baseFrequency="0.55 0.35"
+          numOctaves="4"
+          seed="4"
+          result="noise"/>
+        <feColorMatrix id="burn-matrix"
+          in="noise"
+          type="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  40 0 0 0 1"
+          result="mask"/>
+        <feComposite in="SourceGraphic" in2="mask" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
 
   <!-- 카카오톡 공유 시 미리보기로 뜨는 이미지 1200×630 -->
   <script>var SHARE_OG_IMAGE = 'https://ics.mediaweb.co.kr/_event/20260622_sol/assets/Thumbnail_1200x630.jpg';</script>
