@@ -1376,9 +1376,9 @@ body {
 }
 
 .sec--03__content {
-  max-width: var(--content-w);
+  max-width: calc(var(--content-w) + 2 * var(--content-pad));
   margin: 0 auto;
-  padding: 80px 0 120px;
+  padding: 80px var(--content-pad) 120px;
   display: flex;
   flex-direction: column;
   gap: 72px;
@@ -1500,7 +1500,6 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
 }
 
 .step-card__base {
@@ -1524,7 +1523,7 @@ body {
   transform: translate(-50%, -50%);
   width: 601px;
   height: auto;
-  opacity: 0.5;
+  opacity: 0.3;
   pointer-events: none;
   display: block;
 }
@@ -1537,13 +1536,11 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  z-index: 2;
 }
 
 /* 카드 콘텐츠 */
 .step-card__inner {
   position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1632,7 +1629,6 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
 }
 
 .mileage-box__base {
@@ -1668,12 +1664,10 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  z-index: 2;
 }
 
 .mileage-box__content {
   position: relative;
-  z-index: 1;
   display: flex;
   gap: 48px;
   align-items: center;
@@ -1763,7 +1757,8 @@ body {
 /* ── Section 03 모바일 ── */
 @media (max-width: 1023px) {
   .sec--03__content {
-    padding: 48px var(--content-pad) 80px;
+    padding-top: 48px;
+    padding-bottom: 80px;
     gap: 48px;
   }
 
