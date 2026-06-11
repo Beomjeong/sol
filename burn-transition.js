@@ -37,7 +37,7 @@
     }
 
     if (idx >= NORMAL_SCROLL_FROM) {
-      document.body.style.overflow = '';
+      document.body.style.overflow = 'auto';
       window.scrollTo(0, 0);
     } else {
       document.body.style.overflow = 'hidden';

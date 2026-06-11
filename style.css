@@ -1364,3 +1364,452 @@ body {
 
   .howto-tab__label { font-size: 18px; }
 }
+
+
+/* ════════════════════════════════════════
+   Section 03 — 이벤트 참여방법 + 마일리지 사용처
+   ════════════════════════════════════════ */
+
+.sec--03 {
+  position: relative;
+  min-height: 100vh;
+}
+
+.sec--03__content {
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 80px 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* ── 서브섹션 공통 ── */
+.sec03-subsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.sec03-title {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-align: center;
+  background: linear-gradient(180deg, var(--key-awai-white) 51%, var(--key-awai-gold) 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 100%;
+}
+
+/* ── 이벤트 참여방법 ── */
+.sec03-how {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+/* ── 탭 ── */
+.how-tabs {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+}
+
+.how-tab {
+  position: relative;
+  width: 237px;
+  height: 109px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.how-tab__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.how-tab__label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  white-space: nowrap;
+}
+
+/* ── 패널 ── */
+.how-panels {
+  display: grid;
+  width: 100%;
+}
+
+.how-panel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.how-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ── 스텝 카드 ── */
+.step-cards {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.step-card {
+  position: relative;
+  flex: 0 1 416px;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* 배경 레이어 */
+.step-card__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.step-card__base {
+  position: absolute;
+  inset: 0;
+  background: #24201F;
+}
+
+.step-card__noise {
+  position: absolute;
+  inset: 0;
+  background: url('assets/texture_noise.jpg') repeat;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+}
+
+.step-card__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 601px;
+  height: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  display: block;
+}
+
+/* 프레임 */
+.step-card__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 카드 콘텐츠 */
+.step-card__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 32px;
+}
+
+/* 스텝 뱃지 */
+.step-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-badge__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.step-badge__img--hover { opacity: 0; }
+
+.step-badge__text {
+  position: relative;
+  z-index: 1;
+  padding: 8px 24px;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+/* 스텝 이미지 */
+.step-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 480 / 546;
+  object-fit: cover;
+}
+
+/* 스텝 설명 */
+.step-card__desc {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  text-align: center;
+}
+
+.step-card__accent { color: var(--web-desc-accent); }
+
+/* 스텝 카드 호버 */
+@media (hover: hover) {
+  .step-card:hover .step-badge__img--default { opacity: 0; }
+  .step-card:hover .step-badge__img--hover   { opacity: 1; }
+  .step-card:hover .step-badge__text         { color: var(--web-desc-accent); }
+}
+
+/* 방향 화살표 */
+.step-arrow {
+  width: 28px;
+  height: 40px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ── 마일리지 사용처 ── */
+.mileage-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.mileage-box__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mileage-box__base {
+  position: absolute;
+  inset: 0;
+  background: #24201F;
+}
+
+.mileage-box__noise {
+  position: absolute;
+  inset: 0;
+  background: url('assets/texture_noise.jpg') repeat;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+}
+
+.mileage-box__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 601px;
+  height: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  display: block;
+}
+
+.mileage-box__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mileage-box__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  padding: 48px;
+}
+
+.mileage-txt {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mileage-desc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mileage-desc {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.mileage-desc__mark {
+  flex-shrink: 0;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.mileage-desc__text {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.mileage-accent { color: var(--web-desc-accent); }
+
+.mileage-annot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mileage-annot {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  opacity: 0.8;
+}
+
+.mileage-annot__mark {
+  flex-shrink: 0;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.mileage-annot__text {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.mileage-img {
+  flex-shrink: 0;
+  width: 415px;
+  height: auto;
+  display: block;
+}
+
+/* ── Section 03 모바일 ── */
+@media (max-width: 1023px) {
+  .sec--03__content {
+    padding: 48px var(--content-pad) 80px;
+    gap: 48px;
+  }
+
+  .sec03-title { font-size: 36px; }
+
+  /* 탭 */
+  .how-tabs { gap: 24px; }
+
+  .how-tab {
+    width: clamp(140px, 42vw, 200px);
+    height: auto;
+    aspect-ratio: 305 / 140;
+  }
+
+  .how-tab__label { font-size: 20px; }
+
+  /* 스텝 카드 세로 정렬 */
+  .step-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-card { width: min(100%, 400px); }
+
+  .step-arrow { transform: rotate(90deg); }
+
+  /* 마일리지 박스 세로 정렬 (이미지 → 텍스트) */
+  .mileage-box__content {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+
+  .mileage-img {
+    width: 100%;
+    max-width: 400px;
+    order: -1;
+  }
+
+  .mileage-desc__mark,
+  .mileage-desc__text { font-size: 18px; }
+
+  .mileage-annot__mark,
+  .mileage-annot__text { font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  .how-tab__label { font-size: 18px; }
+  .step-card__desc { font-size: 17px; }
+}
