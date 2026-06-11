@@ -1233,7 +1233,7 @@ body {
   .mission-reward__text {
     font-size: 18px;
     text-align: center;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   /* 미션 박스 너비 오버라이드 해제 */
@@ -1278,6 +1278,7 @@ body {
 
   .howto-panel__img-col {
     width: 100%;
+    order: -1;
   }
 
   .howto-img {
