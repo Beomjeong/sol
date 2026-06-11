@@ -6,9 +6,13 @@
   var panels = guide.querySelectorAll('.howto-panel');
 
   var imgMap = {
-    pc:  { default: 'assets/default_pc.jpg', pc1:  'assets/pc1.jpg',  pc2:  'assets/pc2.jpg'  },
-    ios: { default: 'assets/default_pc.jpg', ios1: 'assets/ios1.jpg', ios2: 'assets/ios2.jpg', ios3: 'assets/ios3.jpg' }
+    pc:  { pc1:  'assets/pc1.jpg',  pc2:  'assets/pc2.jpg'  },
+    ios: { ios1: 'assets/ios1.jpg', ios2: 'assets/ios2.jpg', ios3: 'assets/ios3.jpg' }
   };
+
+  function defaultImg() {
+    return window.innerWidth < 1024 ? 'assets/default_mo.jpg' : 'assets/default_pc.jpg';
+  }
 
   function switchTab(targetId) {
     tabs.forEach(function (tab) {
@@ -22,7 +26,7 @@
       var active = panel.id === 'panel-' + targetId;
       panel.classList.toggle('is-active', active);
       if (active) {
-        panel.querySelector('.howto-img').src = imgMap[targetId].default;
+        panel.querySelector('.howto-img').src = defaultImg();
       }
     });
   }
@@ -47,8 +51,15 @@
     var stepsContainer = panel.querySelector('.howto-steps');
     if (stepsContainer) {
       stepsContainer.addEventListener('mouseleave', function () {
-        img.src = imgMap[tabId].default;
+        img.src = defaultImg();
       });
     }
   });
+
+  // 초기 기본 이미지 설정 (뷰포트 크기에 맞게)
+  var activePanel = guide.querySelector('.howto-panel.is-active');
+  if (activePanel) {
+    var initImg = activePanel.querySelector('.howto-img');
+    if (initImg) initImg.src = defaultImg();
+  }
 })();
