@@ -25,7 +25,12 @@
     SECTIONS.forEach((id, i) => {
       const el = document.getElementById(id);
       if (!el) return;
-      el.style.display = (i === idx) ? '' : 'none';
+      // 일반 스크롤 섹션(sec03+)은 한꺼번에 표시 — 자연스러운 연속 스크롤
+      if (idx >= NORMAL_SCROLL_FROM) {
+        el.style.display = (i >= NORMAL_SCROLL_FROM) ? '' : 'none';
+      } else {
+        el.style.display = (i === idx) ? '' : 'none';
+      }
     });
 
     if (sec02Bg) {
@@ -33,7 +38,7 @@
     }
 
     if (sec03Bg) {
-      sec03Bg.classList.toggle('is-active', idx === 2);
+      sec03Bg.classList.toggle('is-active', idx >= 2);
     }
 
     if (idx >= NORMAL_SCROLL_FROM) {
