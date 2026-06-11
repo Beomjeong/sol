@@ -915,6 +915,14 @@ body {
 /* 패널 */
 .howto-panel { display: none; }
 .howto-panel.is-active { display: block; }
+.howto-panel.is-active .howto-panel__body {
+  animation: panelFadeUp 0.25s ease-out both;
+}
+
+@keyframes panelFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 .howto-panel__body {
   display: flex;
@@ -1290,6 +1298,9 @@ body {
   .howto-step   { font-size: 16px; }
   .howto-note   { font-size: 15px; }
   .howto-annot  { font-size: 16px; }
+
+  /* 탭 전환 애니메이션 비활성화 — 모바일 border-image 플리커 방지 */
+  .howto-panel.is-active .howto-panel__body { animation: none; }
 }
 
 /* ── 768px 이하 추가 조정 ── */
