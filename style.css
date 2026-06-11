@@ -1334,6 +1334,10 @@ body {
     flex-direction: column;
   }
 
+  .howto-panel__steps-col {
+    width: 100%;
+  }
+
   .howto-panel__img-col {
     width: 100%;
     order: -1;
@@ -1341,7 +1345,9 @@ body {
 
 
   .coupon-title { font-size: 28px; }
-  .howto-step   { font-size: 16px; }
+  .howto-step   { 
+    font-size: 16px;
+  }
   .howto-note   { font-size: 15px; }
   .howto-annot  { font-size: 16px; }
 
