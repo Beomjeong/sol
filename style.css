@@ -814,6 +814,7 @@ body {
 
 /* ── 미션 02 : 메인 패키지 래퍼 ── */
 .mission-reward__package {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
