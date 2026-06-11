@@ -463,6 +463,12 @@ body {
   .hero-scrolldown { display: none; }
 }
 
+.sec02-scrolldown-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 32px;
+}
+
 @media (max-width: 768px) {
   .sec--01__logos {
     padding-top: 20px;
