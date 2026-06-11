@@ -711,6 +711,13 @@ body {
   gap: 24px;
 }
 
+.mission-reward__img-wrap {
+  position: relative;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .mission-reward__img {
   display: block;
   width: 420px;
@@ -721,6 +728,57 @@ body {
 }
 .mission-reward__img:hover {
   filter: drop-shadow(0 4px 5px rgba(0,0,0,0.8)) brightness(1.2);
+}
+
+/* ── 조기소진 오버레이 ── */
+.soldout-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  display: none;
+  pointer-events: none;
+}
+
+
+
+.soldout-overlay__dim {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.soldout-overlay__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  max-width: 50%;
+}
+
+.mission-reward.is-soldout .soldout-overlay,
+.mission-reward__package.is-soldout .soldout-overlay {
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .soldout-overlay {
+  width: 320px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .soldout-overlay {
+  width: 260px;
+  }
+}
+
+/* 소진 시 hover 밝기 효과 억제 */
+.mission-reward.is-soldout .mission-reward__img:hover,
+.mission-reward__package.is-soldout .mission-reward__img:hover {
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,0.8));
 }
 
 .mission-reward__name {

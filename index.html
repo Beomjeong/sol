@@ -285,7 +285,13 @@
             </p>
             <!-- 보상 -->
             <div class="mission-reward">
-              <img src="assets/benefit_coupon1000.png" alt="1,000 미션 마일리지" class="mission-reward__img">
+              <div class="mission-reward__img-wrap">
+                <img src="assets/benefit_coupon1000.png" alt="1,000 미션 마일리지" class="mission-reward__img">
+                <div class="soldout-overlay" aria-hidden="true">
+                  <img src="assets/bg_soldout.png" alt="" class="soldout-overlay__dim">
+                  <img src="assets/soldout.png" alt="" class="soldout-overlay__label">
+                </div>
+              </div>
               <div class="mission-reward__name">
                 <img src="assets/deco_left.png" alt="" class="mission-reward__deco" aria-hidden="true">
                 <p class="mission-reward__text">1,000 미션 마일리지</p>
@@ -313,7 +319,13 @@
             <div class="mission-reward">
               <!-- 메인 패키지 이미지 + 이름 -->
               <div class="mission-reward__package">
-                <img src="assets/benefit02.png" alt="SOL: enchant 특별 보상 패키지" class="mission-reward__img mission-reward__img--gift">
+                <div class="mission-reward__img-wrap">
+                  <img src="assets/benefit02.png" alt="SOL: enchant 특별 보상 패키지" class="mission-reward__img mission-reward__img--gift">
+                  <div class="soldout-overlay" aria-hidden="true">
+                    <img src="assets/bg_soldout.png" alt="" class="soldout-overlay__dim">
+                    <img src="assets/soldout.png" alt="" class="soldout-overlay__label">
+                  </div>
+                </div>
                 <div class="mission-reward__name">
                   <img src="assets/deco_left.png" alt="" class="mission-reward__deco" aria-hidden="true">
                   <p class="mission-reward__text">SOL: enchant<br>특별 보상 패키지</p>
@@ -813,6 +825,7 @@
   <script src="coupon-howto.js"></script>
 
   <!-- Section 03 참여방법 탭 전환 -->
+  <script src="soldout.js"></script>
   <script src="sec03-tabs.js"></script>
 
 </body>
