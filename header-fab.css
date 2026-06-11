@@ -156,15 +156,15 @@
 }
 
 #btnShareFloating {
-  background-image: url(assets/quickbt_share_default.svg);
+  background-image: url(assets/quickbt_share_default.png);
 }
 
 #btnShareFloating::after {
-  background-image: url(assets/quickbt_share_tab.svg);
+  background-image: url(assets/quickbt_share_tab.png);
 }
 
 .mobile-fab__btn--top {
-  background-image: url(assets/quickbt_top_default.svg);
+  background-image: url(assets/quickbt_top_default.png);
   height: 0;
   margin-top: 0;
   overflow: hidden;
@@ -174,7 +174,7 @@
 }
 
 .mobile-fab__btn--top::after {
-  background-image: url(assets/quickbt_top_tab.svg);
+  background-image: url(assets/quickbt_top_tab.png);
 }
 
 .mobile-fab__btn.is-tapped::after {
@@ -478,6 +478,17 @@
     overflow: visible;
   }
 
+  .toggle-btn,
+  .btn-share {
+    display: none;
+  }
+
+  .mobile-fab {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
   .toggle-btn,
   .btn-share {
     display: none;

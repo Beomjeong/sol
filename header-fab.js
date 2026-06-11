@@ -235,7 +235,7 @@ if (btnScrollTop) {
   var topBtn = document.getElementById('btnScrollTop');
   var lastY = 0;
   var THRESHOLD = 8;
-  var mq = window.matchMedia('(max-width: 768px)');
+  var mq = window.matchMedia('(max-width: 1024px)');
   var scrollEl = document.querySelector('.parallax-root') || window;
 
   function getScrollY() {
