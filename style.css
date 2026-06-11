@@ -671,6 +671,15 @@ body {
   border-image-repeat: stretch;
 }
 
+.mission-box__frame-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
 /* 콘텐츠 영역 */
 .mission-box__content {
   position: relative;
