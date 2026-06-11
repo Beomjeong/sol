@@ -1555,13 +1555,34 @@ body {
   width: 100%;
 }
 
+@keyframes stepSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .step-card {
   position: relative;
   flex: 0 1 416px;
   min-width: 0;
   overflow: hidden;
   isolation: isolate;
+  opacity: 0; /* 기본 숨김 — is-active 패널 진입 시 애니메이션 */
 }
+
+/* 탭 패널이 활성화될 때 카드가 왼쪽에서 순차적으로 슬라이드 인 */
+/* step-cards 내 순서: card(1) · arrow(2) · card(3) · arrow(4) · card(5) */
+.how-panel.is-active .step-card {
+  animation: stepSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.how-panel.is-active .step-cards .step-card:nth-child(1) { animation-delay: 120ms; }
+.how-panel.is-active .step-cards .step-card:nth-child(3) { animation-delay: 280ms; }
+.how-panel.is-active .step-cards .step-card:nth-child(5) { animation-delay: 490ms; }
 
 /* 배경 레이어 */
 .step-card__bg {
