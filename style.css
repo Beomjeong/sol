@@ -123,6 +123,10 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* 스크롤바 전역 숨김 */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+
 html {
   font-family: 'Hahmlet', 'Noto Sans KR', sans-serif;
   font-size: 16px;

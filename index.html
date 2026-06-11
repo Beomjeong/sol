@@ -86,82 +86,7 @@
     </div>
   </header>
 
-  <!-- ════════════════════════════════
-     공유하기 모달
-════════════════════════════════ -->
-  <div id="shareModal" class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle"
-    aria-hidden="true">
-    <div class="share-modal__dialog" role="document">
-      <div class="share-modal__header">
-        <h2 id="shareModalTitle" class="share-modal__title">공유하기</h2>
-        <button type="button" class="share-modal__close" id="shareModalClose" aria-label="닫기">&times;</button>
-      </div>
-      <div class="share-modal__grid">
-        <button type="button" class="share-item share-item--kakao" data-share="kakao" aria-label="카카오톡으로 공유">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 3C6.48 3 2 6.58 2 11c0 2.83 1.86 5.32 4.66 6.73L5.5 21.5l4.2-2.47c.76.11 1.54.17 2.3.17 5.52 0 10-3.58 10-8S17.52 3 12 3z" />
-            </svg>
-          </span>
-          <span class="share-item__label">카카오톡</span>
-        </button>
-        <button type="button" class="share-item share-item--facebook" data-share="facebook" aria-label="페이스북으로 공유">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5v3.1h2.6V21h3.4z" />
-            </svg>
-          </span>
-          <span class="share-item__label">페이스북</span>
-        </button>
-        <button type="button" class="share-item share-item--twitter" data-share="twitter" aria-label="트위터(X)로 공유">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-            </svg>
-          </span>
-          <span class="share-item__label">트위터</span>
-        </button>
-        <button type="button" class="share-item share-item--naver" data-share="naver" aria-label="네이버 블로그로 공유">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13.91 12.03 9.94 6H6v12h4.09v-6.03L14.06 18H18V6h-4.09z" />
-            </svg>
-          </span>
-          <span class="share-item__label">네이버블로그</span>
-        </button>
-        <button type="button" class="share-item share-item--instagram" data-share="instagram"
-          aria-label="인스타그램 공유용 URL 복사">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4 1 .5.4.8.8 1 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-1 1.4-.4.5-.8.8-1.4 1-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-1-.5-.4-.8-.8-1-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 1-1.4.4-.5.8-.8 1.4-1 .4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2.2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.7a4.1 4.1 0 1 1 0 8.2 4.1 4.1 0 0 1 0-8.2zm0 6.7a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2zm5.2-6.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-            </svg>
-          </span>
-          <span class="share-item__label">인스타그램</span>
-        </button>
-        <button type="button" class="share-item share-item--copy" data-share="copy" aria-label="URL 복사">
-          <span class="share-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" />
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-            </svg>
-          </span>
-          <span class="share-item__label">URL 복사</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 복사 토스트 / 모바일 플로팅 버튼 -->
-  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">클립보드에 복사되었습니다.</div>
-  <div class="mobile-fab" role="group" aria-label="모바일 플로팅 버튼">
-    <button class="mobile-fab__btn" type="button" id="btnShareFloating" aria-label="공유하기"></button>
-    <button class="mobile-fab__btn mobile-fab__btn--top" type="button" id="btnScrollTop" aria-label="맨 위로"></button>
-  </div>
+ 
 
   <!-- ════════════════════════════════
      MAIN CONTENT
@@ -812,11 +737,9 @@
     </defs>
   </svg>
 
-  <!-- 카카오톡 공유 시 미리보기로 뜨는 이미지 1200×630 -->
-  <script>var SHARE_OG_IMAGE = 'https://ics.mediaweb.co.kr/_event/20260622_sol/assets/Thumbnail_1200x630.jpg';</script>
 
-  <!-- header-fab.js 연결 -->
-  <script src="header-fab.js"></script>
+
+
 
   <!-- 번 전환 엔진 -->
   <script src="burn-transition.js"></script>
@@ -831,6 +754,89 @@
   <script src="soldout.js"></script>
   <script src="mission-particles.js"></script>
   <script src="sec03-tabs.js"></script>
+
+ <!-- ════════════════════════════════
+     공유하기 모달
+════════════════════════════════ -->
+  <div id="shareModal" class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle"
+    aria-hidden="true">
+    <div class="share-modal__dialog" role="document">
+      <div class="share-modal__header">
+        <h2 id="shareModalTitle" class="share-modal__title">공유하기</h2>
+        <button type="button" class="share-modal__close" id="shareModalClose" aria-label="닫기">&times;</button>
+      </div>
+      <div class="share-modal__grid">
+        <button type="button" class="share-item share-item--kakao" data-share="kakao" aria-label="카카오톡으로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 3C6.48 3 2 6.58 2 11c0 2.83 1.86 5.32 4.66 6.73L5.5 21.5l4.2-2.47c.76.11 1.54.17 2.3.17 5.52 0 10-3.58 10-8S17.52 3 12 3z" />
+            </svg>
+          </span>
+          <span class="share-item__label">카카오톡</span>
+        </button>
+        <button type="button" class="share-item share-item--facebook" data-share="facebook" aria-label="페이스북으로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5v3.1h2.6V21h3.4z" />
+            </svg>
+          </span>
+          <span class="share-item__label">페이스북</span>
+        </button>
+        <button type="button" class="share-item share-item--twitter" data-share="twitter" aria-label="트위터(X)로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+            </svg>
+          </span>
+          <span class="share-item__label">트위터</span>
+        </button>
+        <button type="button" class="share-item share-item--naver" data-share="naver" aria-label="네이버 블로그로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.91 12.03 9.94 6H6v12h4.09v-6.03L14.06 18H18V6h-4.09z" />
+            </svg>
+          </span>
+          <span class="share-item__label">네이버블로그</span>
+        </button>
+        <button type="button" class="share-item share-item--instagram" data-share="instagram"
+          aria-label="인스타그램 공유용 URL 복사">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4 1 .5.4.8.8 1 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-1 1.4-.4.5-.8.8-1.4 1-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-1-.5-.4-.8-.8-1-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 1-1.4.4-.5.8-.8 1.4-1 .4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2.2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.7a4.1 4.1 0 1 1 0 8.2 4.1 4.1 0 0 1 0-8.2zm0 6.7a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2zm5.2-6.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+          </span>
+          <span class="share-item__label">인스타그램</span>
+        </button>
+        <button type="button" class="share-item share-item--copy" data-share="copy" aria-label="URL 복사">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+          </span>
+          <span class="share-item__label">URL 복사</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 복사 토스트 / 모바일 플로팅 버튼 -->
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">클립보드에 복사되었습니다.</div>
+  <div class="mobile-fab" role="group" aria-label="모바일 플로팅 버튼">
+    <button class="mobile-fab__btn" type="button" id="btnShareFloating" aria-label="공유하기"></button>
+    <button class="mobile-fab__btn mobile-fab__btn--top" type="button" id="btnScrollTop" aria-label="맨 위로"></button>
+  </div>
+
+    <!-- 카카오톡 공유 시 미리보기로 뜨는 이미지 1200×630 -->
+  <script>var SHARE_OG_IMAGE = 'https://ics.mediaweb.co.kr/_event/20260622_sol/assets/Thumbnail_1200x630.jpg';</script>
+
+    <!-- header-fab.js 연결 -->
+  <script src="header-fab.js"></script>
 
 </body>
 
