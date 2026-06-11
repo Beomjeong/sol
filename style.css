@@ -488,7 +488,7 @@ body {
   display: flex;
   flex-shrink: 0;
   width: max-content;
-  animation: runeScrollLR 30s linear infinite;
+  animation: runeScrollLR 40s linear infinite;
 }
 
 .sec02-bg__rune-strip {
@@ -675,6 +675,10 @@ body {
   max-width: 100%;
   height: auto;
   filter: drop-shadow(0 4px 5px rgba(0,0,0,0.8));
+  transition: filter 0.2s ease;
+}
+.mission-reward__img:hover {
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,0.8)) brightness(1.2);
 }
 
 .mission-reward__name {
