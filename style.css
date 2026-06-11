@@ -516,7 +516,44 @@ body {
   height: auto;
   display: block;
   pointer-events: none;
+  opacity: 0.5;
 }
+
+
+/* ════════════════════════════════════════
+   Section 03 배경 — bg_sec03.jpg + 상단 데코
+   ════════════════════════════════════════ */
+.sec--03__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  overflow: hidden;
+}
+
+.sec--03__bg.is-active {
+  opacity: 1;
+}
+
+.sec03-bg__base {
+  position: absolute;
+  inset: 0;
+  background: url('assets/bg_sec03.jpg') center / cover no-repeat;
+}
+
+.sec03-bg__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 
 .sec--02__content {
   position: relative;
@@ -1191,8 +1228,13 @@ body {
 
   /* ── Section 02 ── */
 
-  /* 고정 배경 비활성화 — sec02에 직접 배경 적용 */
+  /* 고정 배경 비활성화 — 섹션에 직접 배경 적용 */
   #sec02bg { display: none; }
+  #sec03bg { display: none; }
+
+  .sec--03 {
+    background: url('assets/bg_sec03.jpg') center top / cover no-repeat;
+  }
 
   .sec--02 {
     background: url('assets/bg_sec02.jpg') center top / cover no-repeat;

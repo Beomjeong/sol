@@ -15,6 +15,7 @@
   let isTransiting = false;
 
   const sec02Bg = document.getElementById('sec02bg');
+  const sec03Bg = document.getElementById('sec03bg');
 
   function isMobileWidth() {
     return window.innerWidth < MOBILE_BP;
@@ -29,6 +30,10 @@
 
     if (sec02Bg) {
       sec02Bg.classList.toggle('is-active', idx === 1);
+    }
+
+    if (sec03Bg) {
+      sec03Bg.classList.toggle('is-active', idx === 2);
     }
 
     if (idx >= NORMAL_SCROLL_FROM) {
@@ -58,7 +63,16 @@
   }
 
   window.addEventListener('wheel', (e) => {
-    if (isMobileWidth() || isTransiting || currentIdx >= NORMAL_SCROLL_FROM) return;
+    if (isMobileWidth() || isTransiting) return;
+
+    // 일반 스크롤 섹션(sec03+) 최상단에서 위로 → sec02 복귀
+    if (currentIdx >= NORMAL_SCROLL_FROM) {
+      if (currentIdx === NORMAL_SCROLL_FROM && e.deltaY < 0 && window.scrollY === 0) {
+        goTo(NORMAL_SCROLL_FROM - 1);
+      }
+      return;
+    }
+
     const down = e.deltaY > 0;
 
     if (currentIdx === 0 && down) {
@@ -82,10 +96,19 @@
   }, { passive: true });
 
   window.addEventListener('touchend', (e) => {
-    if (isMobileWidth() || isTransiting || currentIdx >= NORMAL_SCROLL_FROM) return;
+    if (isMobileWidth() || isTransiting) return;
+
     const dy = touchStartY - e.changedTouches[0].clientY;
     if (Math.abs(dy) < 30) return;
     const down = dy > 0;
+
+    // 일반 스크롤 섹션(sec03+) 최상단에서 위로 → sec02 복귀
+    if (currentIdx >= NORMAL_SCROLL_FROM) {
+      if (currentIdx === NORMAL_SCROLL_FROM && !down && window.scrollY === 0) {
+        goTo(NORMAL_SCROLL_FROM - 1);
+      }
+      return;
+    }
 
     if (currentIdx === 0 && down) {
       goTo(1);
