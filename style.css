@@ -1482,7 +1482,7 @@ body {
 .step-cards {
   display: flex;
   gap: 24px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
@@ -1670,7 +1670,7 @@ body {
   position: relative;
   display: flex;
   gap: 48px;
-  align-items: center;
+  align-items: flex-start;
   padding: 48px;
 }
 
