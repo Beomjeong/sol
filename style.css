@@ -912,16 +912,23 @@ body {
   pointer-events: none;
 }
 
-/* 패널 */
-.howto-panel { display: none; }
-.howto-panel.is-active { display: block; }
-.howto-panel.is-active .howto-panel__body {
-  animation: panelFadeUp 0.25s ease-out both;
+/* 패널 — grid 스택으로 display 전환 없이 opacity 페이드 */
+.howto-panels {
+  display: grid;
 }
 
-@keyframes panelFadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+.howto-panel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.howto-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .howto-panel__body {
@@ -1299,8 +1306,9 @@ body {
   .howto-note   { font-size: 15px; }
   .howto-annot  { font-size: 16px; }
 
-  /* 탭 전환 애니메이션 비활성화 — 모바일 border-image 플리커 방지 */
-  .howto-panel.is-active .howto-panel__body { animation: none; }
+  /* 모바일 border-image 플리커 불가 — 즉시 전환 */
+  .howto-panel,
+  .howto-panel.is-active { transition: none; }
 }
 
 /* ── 768px 이하 추가 조정 ── */
