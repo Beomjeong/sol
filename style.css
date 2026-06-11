@@ -1868,6 +1868,28 @@ body {
   color: var(--web-desc);
 }
 
+.mileage-guide-btn {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.mileage-guide-btn__img {
+  display: block;
+  height: auto;
+  width: 300px;
+}
+
+.mileage-guide-btn__img--hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mileage-guide-btn:hover .mileage-guide-btn__img--hover { opacity: 1; }
+
 .mileage-img {
   flex-shrink: 0;
   width: 415px;
@@ -1928,6 +1950,8 @@ body {
 
   .mileage-annot__mark,
   .mileage-annot__text { font-size: 15px; }
+
+  .mileage-guide-btn { align-self: center; }
 }
 
 @media (max-width: 768px) {
