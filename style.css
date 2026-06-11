@@ -834,6 +834,208 @@ body {
 }
 
 
+/* ── 미션 03 : 쿠폰 등록방법 ── */
+#mission03 .mission-box__content {
+  width: 1310px;
+  gap: 12px;
+  padding-bottom: 64px;
+}
+
+.coupon-title {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  padding-bottom: 4px;
+  background: linear-gradient(180deg, var(--key-awai-white) 51%, var(--key-awai-gold) 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.howto-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* 탭 버튼 */
+.howto-tabs {
+  display: flex;
+  gap: 64px;
+  justify-content: center;
+  align-items: center;
+}
+
+.howto-tab {
+  position: relative;
+  width: 237px;
+  height: 109px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.howto-tab__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.howto-tab__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* 패널 */
+.howto-panel { display: none; }
+.howto-panel.is-active { display: block; }
+
+.howto-panel__body {
+  display: flex;
+  gap: 42px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.howto-panel__steps-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 스텝 리스트 */
+.howto-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.howto-step {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--web-bg-gold);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--web-bg-gold);
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  width: 100%;
+}
+
+.howto-step:hover {
+  border-color: var(--web-light-gold);
+  color: var(--web-light-gold);
+}
+
+.howto-step__num { flex-shrink: 0; white-space: nowrap; }
+.howto-step__text { flex: 1; min-width: 0; }
+
+/* IOS step 1 링크 텍스트 */
+.howto-step__link {
+  font-weight: 800;
+  text-decoration: underline;
+  color: var(--web-bg-gold);
+  transition: color 0.2s ease;
+}
+.howto-step:hover .howto-step__link {
+  color: #00ffe1;
+}
+
+/* ※ 주의사항 */
+.howto-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.howto-note {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  opacity: 0.8;
+  color: var(--web-desc);
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.05em;
+}
+
+.howto-note__mark { flex-shrink: 0; white-space: nowrap; }
+.howto-note__text { flex: 1; min-width: 0; }
+
+/* 가이드 이미지 */
+.howto-panel__img-col {
+  flex-shrink: 0;
+  width: 468px;
+}
+
+.howto-img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* ✓ 유의사항 박스 */
+.howto-annots {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.howto-annot {
+  background: rgba(234, 219, 184, 0.05);
+  border: 1px solid rgba(242, 239, 233, 0.3);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 16px 24px;
+  color: var(--web-desc);
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.howto-annot:hover {
+  background: rgba(234, 219, 184, 0.1);
+  border-color: rgba(242, 239, 233, 0.6);
+}
+
+.howto-annot__icon { flex-shrink: 0; white-space: nowrap; }
+.howto-annot__text { flex: 1; min-width: 0; }
+
+
 /* ── Section 03, 04 : 일반 스크롤 ── */
 
 .sec--03,
