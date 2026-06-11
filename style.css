@@ -1000,7 +1000,7 @@ body {
 .howto-note {
   display: flex;
   gap: 8px;
-  align-items: center;
+  align-items: flex-start;
   opacity: 0.8;
   color: var(--web-desc);
   font-family: 'Hahmlet', sans-serif;
