@@ -861,6 +861,12 @@ body {
     opacity: 1;
     animation: ringRotate 6s linear infinite;
   }
+  .benefit-item:hover .benefit-item__name {
+    text-shadow:
+      0 0 8px rgba(255, 218, 138, 0.55),
+      0 0 20px rgba(255, 218, 138, 0.3);
+    transition: text-shadow 0.3s ease;
+  }
 }
 
 .benefit-item__name {
@@ -871,6 +877,7 @@ body {
   letter-spacing: -0.05em;
   color: var(--web-desc);
   text-align: center;
+  transition: text-shadow 0.3s ease;
 }
 
 .benefit-item__accent {
@@ -1509,6 +1516,7 @@ body {
   position: absolute;
   inset: 0;
   background: #24201F;
+  transition: background 0.3s ease;
 }
 
 .step-card__noise {
@@ -1610,6 +1618,7 @@ body {
   .step-card:hover .step-badge__img--default { opacity: 0; }
   .step-card:hover .step-badge__img--hover   { opacity: 1; }
   .step-card:hover .step-badge__text         { color: var(--web-desc-accent); }
+  .step-card:hover .step-card__base          { background: #372A27; }
 }
 
 /* 방향 화살표 */
