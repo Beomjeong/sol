@@ -707,6 +707,133 @@ body {
 }
 
 
+/* ── 미션 02 : 콘텐츠 너비 오버라이드 (benefit-detail 824px 수용) ── */
+#mission02 .mission-box__content {
+  width: 900px;
+}
+
+/* ── 미션 02 : 메인 패키지 래퍼 ── */
+.mission-reward__package {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-reward__img--gift {
+  width: 690px;
+}
+
+/* ── 미션 02 : 쿠폰 구성품 ── */
+.benefit-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 824px;
+  max-width: 100%;
+}
+
+.benefit-detail__title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.benefit-detail__star {
+  display: block;
+  width: 15px;
+  height: 16px;
+}
+
+.benefit-detail__label {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+}
+
+.benefit-detail__items {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ── 아이템 카드 ── */
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+}
+
+.benefit-item__icon-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+/* 아이콘 default / hover — 겹쳐서 교차 페이드 */
+.benefit-item__icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  transition: opacity 0.25s ease;
+}
+
+.benefit-item__icon--hover {
+  opacity: 0;
+}
+
+/* 원형 링 — 아이콘 위 */
+.benefit-item__ring {
+  position: absolute;
+  inset: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.benefit-item__ring--hover {
+  opacity: 0;
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 호버 상태 */
+.benefit-item:hover .benefit-item__icon--default { opacity: 0; }
+.benefit-item:hover .benefit-item__icon--hover   { opacity: 1; }
+.benefit-item:hover .benefit-item__ring--default  { opacity: 0; }
+.benefit-item:hover .benefit-item__ring--hover {
+  opacity: 1;
+  animation: ringRotate 6s linear infinite;
+}
+
+.benefit-item__name {
+  font-family: 'Hahmlet', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.05em;
+  color: var(--web-desc);
+  text-align: center;
+}
+
+.benefit-item__accent {
+  color: var(--web-desc-accent);
+}
+
+
 /* ── Section 03, 04 : 일반 스크롤 ── */
 
 .sec--03,
