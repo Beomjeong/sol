@@ -1190,8 +1190,13 @@ body {
     gap: 24px;
   }
 
-  .sec02-header__title { font-size: 36px; }
+
+  .sec02-header__title { font-size: 32px; }
   .sec02-header__desc  { font-size: 18px; }
+
+  .sec02-header{
+    gap: 16px;
+  }
 
   /* 미션 박스 공통 */
   .mission-box__content {
