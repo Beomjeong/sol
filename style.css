@@ -443,6 +443,22 @@ body {
 
 .hero-cta:hover .hero-cta__img--hover { opacity: 1; }
 
+.hero-scrolldown {
+  display: block;
+  width: 90px;
+  height: auto;
+  animation: scrolldownBob 1.6s ease-in-out infinite;
+}
+
+@keyframes scrolldownBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+@media (max-width: 1023px) {
+  .hero-scrolldown { display: none; }
+}
+
 @media (max-width: 768px) {
   .sec--01__logos {
     padding-top: 20px;
