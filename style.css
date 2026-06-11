@@ -1679,6 +1679,8 @@ body {
   pointer-events: none;
 }
 
+.mileage-box__frame--mobile { display: none; }
+
 .mileage-box__content {
   position: relative;
   display: flex;
@@ -1804,6 +1806,10 @@ body {
     align-items: center;
     padding: 32px 24px;
   }
+
+  /* 프레임 이미지 전환 */
+  .mileage-box__frame--desktop { display: none; }
+  .mileage-box__frame--mobile  { display: block; }
 
   .mileage-img {
     width: 100%;
