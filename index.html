@@ -792,15 +792,16 @@
   <!-- SVG 번 필터 (feTurbulence dissolve) -->
   <svg class="burn-svg" aria-hidden="true">
     <defs>
-      <filter id="burn-filter" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <filter id="burn-filter" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
         <feTurbulence id="burn-turbulence"
-          type="fractalNoise"
-          baseFrequency="0.55 0.35"
+          type="turbulence"
+          baseFrequency="0.008 0.005"
           numOctaves="4"
           seed="4"
           result="noise"/>
+        <feGaussianBlur in="noise" stdDeviation="40" result="blurred-noise"/>
         <feColorMatrix id="burn-matrix"
-          in="noise"
+          in="blurred-noise"
           type="matrix"
           values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  40 0 0 0 1"
           result="mask"/>
