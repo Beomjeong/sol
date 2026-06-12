@@ -92,6 +92,8 @@
   }
 
   function init() {
+    if (window.innerWidth < 768) return; /* 모바일에서 파티클 비활성화 */
+
     // Mission 01 — img-wrap 위에 파티클, mission-reward 의 is-soldout 체크
     var m1Canvas   = document.querySelector('#mission01 .mission-reward__img-wrap');
     var m1Soldout  = document.querySelector('#mission01 .mission-reward');
