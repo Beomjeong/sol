@@ -859,6 +859,7 @@ body {
   line-height: 1.4;
   letter-spacing: -0.05em;
   white-space: nowrap;
+  text-align: center;
   background: linear-gradient(180deg, var(--web-desc) 51%, #573d00 120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
